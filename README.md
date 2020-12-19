@@ -1,1 +1,6 @@
-# image-recognition-service
+![Albify](https://raw.githubusercontent.com/RSOTeam13/documentation/main/resources/logo-dark.png)
+# Albify - Upload image service
+
+![Travis-Build](https://travis-ci.com/RSOTeam13/image-recognition-service.svg?branch=main)
+ 
+Micro service for uploading images in Albify application. You can find project documentation [here](https://github.com/RSOTeam13/documentation).
