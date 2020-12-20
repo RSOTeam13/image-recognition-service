@@ -1,8 +1,7 @@
 package si.fri.rso.albify.imagerecognitionservice.api.v1.resources;
 
 import org.eclipse.microprofile.metrics.annotation.Metered;
-import si.fri.rso.albify.imagerecognitionservice.services.beans.ImageBean;
-import si.fri.rso.albify.imagerecognitionservice.services.beans.S3Bean;
+import si.fri.rso.albify.imagerecognitionservice.lib.ImagePath;
 import si.fri.rso.albify.imagerecognitionservice.services.clients.AmazonRekognitionClient;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -31,10 +30,10 @@ public class ImageRecognitionResource {
 
     @Metered(name = "recognition_requests")
     @POST
-    public Response imageRecognition(String imagePath) {
+    public Response imageRecognition(ImagePath imagePath) {
         try {
 
-            List<String> tags = recognitionClient.getTags(imagePath);
+            List<String> tags = recognitionClient.getTags(imagePath.getImagePath());
             return Response.status(Response.Status.OK)
                     .entity(tags)
                     .build();
