@@ -27,6 +27,7 @@
         <kumuluzee-metrics.version>2.3.0</kumuluzee-metrics.version>
         <kumuluzee-config-mp.version>1.4.0</kumuluzee-config-mp.version>
         <aws-java-sdk.version>1.11.911</aws-java-sdk.version>
+        <kumuluzee-cors.version>1.0.6</kumuluzee-cors.version>
     </properties>
 
     <dependencyManagement>
@@ -85,6 +86,11 @@
                 <groupId>com.amazonaws</groupId>
                 <artifactId>aws-java-sdk-rekognition</artifactId>
                 <version>${aws-java-sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kumuluz.ee.cors</groupId>
+                <artifactId>kumuluzee-cors</artifactId>
+                <version>${kumuluzee-cors.version}</version>
             </dependency>
 
         </dependencies>
