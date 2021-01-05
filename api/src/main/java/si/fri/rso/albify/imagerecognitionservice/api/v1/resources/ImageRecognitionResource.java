@@ -1,6 +1,5 @@
 package si.fri.rso.albify.imagerecognitionservice.api.v1.resources;
 
-import com.kumuluz.ee.cors.annotations.CrossOrigin;
 import org.eclipse.microprofile.metrics.annotation.Metered;
 import si.fri.rso.albify.imagerecognitionservice.lib.ImagePath;
 import si.fri.rso.albify.imagerecognitionservice.services.clients.AmazonRekognitionClient;
@@ -19,7 +18,6 @@ import java.util.logging.Logger;
 @Path("/recognition")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-@CrossOrigin(name = "image-recognition-resource")
 public class ImageRecognitionResource {
 
     private Logger log = Logger.getLogger(ImageRecognitionResource.class.getName());

@@ -43,10 +43,6 @@
             <artifactId>kumuluzee-config-mp</artifactId>
             <version>${kumuluzee-config-mp.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.kumuluz.ee.cors</groupId>
-            <artifactId>kumuluzee-cors</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
