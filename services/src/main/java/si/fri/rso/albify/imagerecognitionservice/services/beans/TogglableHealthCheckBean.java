@@ -1,6 +1,6 @@
 package si.fri.rso.albify.imagerecognitionservice.services.beans;
 
-import org.eclipse.microprofile.health.Readiness;
+import org.eclipse.microprofile.health.Liveness;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import si.fri.rso.albify.imagerecognitionservice.config.RestProperties;
@@ -8,7 +8,7 @@ import si.fri.rso.albify.imagerecognitionservice.config.RestProperties;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-@Readiness
+@Liveness
 @ApplicationScoped
 public class TogglableHealthCheckBean implements HealthCheck {
     @Inject

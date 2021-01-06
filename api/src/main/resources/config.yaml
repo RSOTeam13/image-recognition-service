@@ -20,6 +20,11 @@ kumuluzee:
   config:
     consul:
       agent: http://consul.bercithebeast.com
+  health:
+    checks:
+      disk-space-health-check:
+        threshold: 100000000
+        type: liveness
 
 rest-config:
   enable-tagging: true
