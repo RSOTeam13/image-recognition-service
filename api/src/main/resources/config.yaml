@@ -7,6 +7,12 @@ kumuluzee:
     base-url: http://localhost:8080
     http:
       port: 8080
+  cors-filter:
+    annotations:
+      image-recognition-resource:
+        allow-origin: "*"
+        allow-subdomains: true
+        supported-methods: "GET, POST, DELETE, HEAD, OPTIONS, PUT"
   metrics:
     web-instrumentation:
       - name: metrics-enpoint
