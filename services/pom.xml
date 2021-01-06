@@ -60,6 +60,12 @@
             <artifactId>aws-java-sdk-rekognition</artifactId>
         </dependency>
 
+        <dependency>
+            <artifactId>kumuluzee-config-consul</artifactId>
+            <groupId>com.kumuluz.ee.config</groupId>
+            <version>${kumuluzee-config.version}</version>
+        </dependency>
+
     </dependencies>
 
 </project>

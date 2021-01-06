@@ -17,3 +17,6 @@ kumuluzee:
     web-instrumentation:
       - name: metrics-enpoint
         url-pattern: /metrics/*
+
+rest-config:
+  enable-tagging: true

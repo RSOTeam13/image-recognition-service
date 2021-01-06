@@ -8,9 +8,12 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.rekognition.AmazonRekognition;
 import com.amazonaws.services.rekognition.AmazonRekognitionClientBuilder;
 import com.amazonaws.services.rekognition.model.*;
+import si.fri.rso.albify.imagerecognitionservice.config.RestProperties;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,6 +22,9 @@ import java.util.stream.Collectors;
 public class AmazonRekognitionClient {
 
     private AmazonRekognition rekognitionClient;
+
+    @Inject
+    private RestProperties properties;
 
     @PostConstruct
     private void init() {
@@ -38,6 +44,9 @@ public class AmazonRekognitionClient {
 
     }
     public List<String> getTags(String s3Image) {
+        if (!properties.getEnableTagging()) {
+            return new ArrayList<>(){};
+        }
         DetectLabelsRequest request = new DetectLabelsRequest()
                 .withImage(new Image().withS3Object(new S3Object().withName(s3Image).withBucket("albify")))
                 .withMaxLabels(10).withMinConfidence(75F);
