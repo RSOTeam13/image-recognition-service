@@ -19,7 +19,8 @@ kumuluzee:
         url-pattern: /metrics/*
   config:
     consul:
-      agent: http://consul.bercithebeast.com:3500
+      agent: http://consul.bercithebeast.com
 
 rest-config:
   enable-tagging: true
+  bad-health: false

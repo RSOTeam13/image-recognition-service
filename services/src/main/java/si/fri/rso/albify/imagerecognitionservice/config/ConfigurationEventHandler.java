@@ -15,6 +15,7 @@ public class ConfigurationEventHandler {
     public void init(@Observes @Initialized(ApplicationScoped.class) Object init) {
 
         String watchedKey = "enable-tagging";
+        String watchedKeyTwo = "bad-health";
 
         ConfigurationUtil.getInstance().subscribe(watchedKey, (String key, String value) -> {
             if (watchedKey.equals(key)) {
@@ -23,6 +24,15 @@ public class ConfigurationEventHandler {
                     log.info("Tagging enabled.");
                 } else {
                     log.info("Tagging disabled.");
+                }
+
+            }
+            if (watchedKeyTwo.equals(key)) {
+
+                if ("true".equals(value.toLowerCase())) {
+                    log.info("Health degraded.");
+                } else {
+                    log.info("Health upgraded.");
                 }
 
             }

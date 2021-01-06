@@ -12,11 +12,22 @@ public class RestProperties {
     @ConfigValue(watch = true)
     private Boolean enableTagging;
 
+    @ConfigValue(watch = true)
+    private Boolean badHealth;
+
     public Boolean getEnableTagging() {
         return enableTagging;
     }
 
     public void setEnableTagging(final Boolean enableTagging) {
         this.enableTagging = enableTagging;
+    }
+
+    public Boolean getBadHealth() {
+        return badHealth;
+    }
+
+    public void setBadHealth(final Boolean badHealth) {
+        this.badHealth = badHealth;
     }
 }
